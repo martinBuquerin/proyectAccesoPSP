@@ -50,7 +50,6 @@ public class impUsuarioService implements iUsuarioService {
     @Override
     public List<Usuario> buscarUsuarioPorRol(List<Usuario> usuarios) {
         List<Usuario> usuario = usuarios;
-        List<Usuario> profesionales = null;
         for (int i = 0; i < usuario.size(); i++) {
             int idRol = ((Usuario) usuario.get(i)).getRolesidRol().getIdRol().intValue();
             if (idRol != 9) {

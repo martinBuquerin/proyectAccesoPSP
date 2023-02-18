@@ -4,7 +4,6 @@ import domain.Roles;
 import domain.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -15,14 +14,13 @@ public class impUsuarioDao implements iUsuarioDao {
     @PersistenceContext(unitName = "data")
     protected EntityManager em;
 
-    @Inject
-    public iUsuarioDao usuarioDao;
-
+    @Override
     public List<Usuario> seleccionaUsuario() {
         List<Usuario> usuarios = this.em.createNamedQuery("Usuario.findAll").getResultList();
         return usuarios;
     }
 
+    @Override
     public Usuario buscarUsuarioPorEmail(Usuario email) {
         Query buscarPorEmail = this.em.createNamedQuery("Usuario.findByEmail");
         String correo = email.getEmail();
@@ -32,18 +30,22 @@ public class impUsuarioDao implements iUsuarioDao {
         return usuario;
     }
 
+    @Override
     public void insertarUsuario(Usuario usuario) {
         this.em.persist(usuario);
     }
 
+    @Override
     public void eliminarUsuario(Usuario usuario) {
         this.em.remove(this.em.merge(usuario));
     }
 
+    @Override
     public void actualizarUsuario(Usuario usuario) {
         this.em.merge(usuario);
     }
 
+    @Override
     public List<Usuario> buscarUsuarioPorRol(Roles rol) {
         Query buscarPorRol = this.em.createNamedQuery("Roles.findByNombre");
         int id = rol.getIdRol().intValue();

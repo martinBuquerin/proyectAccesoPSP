@@ -3,18 +3,20 @@ package data;
 import domain.Roles;
 import domain.Usuario;
 import java.util.List;
+import javax.ejb.Local;
+
 
 public interface iUsuarioDao {
 
     List<Usuario> seleccionaUsuario();
 
-    List<Usuario> buscarUsuarioPorRol(Roles paramRoles);
+    List<Usuario> buscarUsuarioPorRol(Roles rol);
 
-    Usuario buscarUsuarioPorEmail(Usuario paramUsuario);
+    Usuario buscarUsuarioPorEmail(Usuario usuario);
 
-    void insertarUsuario(Usuario paramUsuario);
+    void insertarUsuario(Usuario usuario);
 
-    void eliminarUsuario(Usuario paramUsuario);
+    void eliminarUsuario(Usuario usuario);
 
-    void actualizarUsuario(Usuario paramUsuario);
+    void actualizarUsuario(Usuario usuario);
 }

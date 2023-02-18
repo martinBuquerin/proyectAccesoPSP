@@ -47,18 +47,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Beneficios</a>
                 </li>
             </ul>
-
-
-
-
-
-
-
             <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModal"><i class="far fa-user"></i>Identificate</a>
-
-
-
-
         </div>
     </div>
 </nav>
@@ -121,7 +110,7 @@
 
                 <div class="bg-white p-5 rounded-5 text-secondary shadow" >
                     <div class="d-flex justify-content-center rounded-5">
-                        <img src="./recursos/imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
+                        <img src="./imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
                     </div>
                     <div class="text-center fs-1 fw-bold rounded-5">Login</div>
                     <div class="input-group mt-4 rounded-5" >
@@ -153,7 +142,7 @@
                         </div>
                     </div>
                     <div class="btn d-flex gap-2 justify-content-center border mt-3 shadow-sm rounded-5">
-                        <img src="./recursos/imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
+                        <img src="./imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
                         <div class="fw-semibold text-secondary rounded-5">Continua con Google</div>
                     </div>
                 </div>
@@ -187,7 +176,7 @@
 
                 <div class="bg-white p-5 rounded-5 text-secondary shadow" >
                     <div class="d-flex justify-content-center rounded-5">
-                        <img src="./recursos/imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
+                        <img src="./imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
                     </div>
                     <div class="text-center fs-1 fw-bold rounded-5">Registro</div>
                     <div class="input-group mt-4 rounded-5" >
@@ -226,7 +215,7 @@
                         </div>
                     </div>
                     <div class="btn d-flex gap-2 justify-content-center border mt-3 shadow-sm rounded-5">
-                        <img src="./recursos/imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
+                        <img src="./imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
                         <div class="fw-semibold text-secondary rounded-5">Continua con Google</div>
                     </div>
                 </div>
