@@ -9,9 +9,9 @@ public interface iServicioService {
 
     List<Servicio> seleccionaContrato();
 
-    void insertarServicio(Servicio paramServicio);
+    void insertarServicio(Servicio servicio);
 
-    void eliminarServicio(Servicio paramServicio);
+    void eliminarServicio(Servicio servicio);
 
-    void actualizarServicio(Servicio paramServicio);
+    void actualizarServicio(Servicio servicio);
 }

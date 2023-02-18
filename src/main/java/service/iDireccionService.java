@@ -9,9 +9,9 @@ public interface iDireccionService {
 
     List<Direccion> seleccionaDireccion();
 
-    void insertarDireccion(Direccion paramDireccion);
+    void insertarDireccion(Direccion direccion);
 
-    void eliminarDireccion(Direccion paramDireccion);
+    void eliminarDireccion(Direccion direccion);
 
-    void actualizarDireccion(Direccion paramDireccion);
+    void actualizarDireccion(Direccion direccion);
 }

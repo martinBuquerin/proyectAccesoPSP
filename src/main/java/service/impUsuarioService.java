@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import service.iUsuarioService;
+
 
 @Stateless
 public class impUsuarioService implements iUsuarioService {

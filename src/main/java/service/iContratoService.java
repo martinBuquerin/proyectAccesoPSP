@@ -9,9 +9,9 @@ public interface iContratoService {
 
     List<Contrata> seleccionaContrato();
 
-    void insertarContrato(Contrata paramContrata);
+    void insertarContrato(Contrata contrato);
 
-    void eliminarContrato(Contrata paramContrata);
+    void eliminarContrato(Contrata contrato);
 
-    void actualizarContrato(Contrata paramContrata);
+    void actualizarContrato(Contrata contrato);
 }

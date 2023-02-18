@@ -9,9 +9,9 @@ public interface iOfreceService {
 
     List<Ofrece> seleccionaServicioOfrecido();
 
-    void insertarServicioOfrecido(Ofrece paramOfrece);
+    void insertarServicioOfrecido(Ofrece ofrece);
 
-    void eliminarServicioOfrecido(Ofrece paramOfrece);
+    void eliminarServicioOfrecido(Ofrece ofrece);
 
-    void actualizarServicioOfrecido(Ofrece paramOfrece);
+    void actualizarServicioOfrecido(Ofrece ofrece);
 }

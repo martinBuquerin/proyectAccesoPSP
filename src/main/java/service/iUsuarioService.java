@@ -10,17 +10,17 @@ public interface iUsuarioService {
 
     List<Usuario> seleccionaUsuario();
 
-    void insertarUsuario(Usuario paramUsuario);
+    void insertarUsuario(Usuario usuario);
 
-    void eliminarUsuario(Usuario paramUsuario);
+    void eliminarUsuario(Usuario usuario);
 
-    void actualizarUsuario(Usuario paramUsuario);
+    void actualizarUsuario(Usuario usuario);
 
-    List<Usuario> buscarUsuarioPorRol(Roles paramRoles);
+    List<Usuario> buscarUsuarioPorRol(Roles usuario);
 
-    List<Usuario> buscarUsuarioPorRol(List<Usuario> paramList);
+    List<Usuario> buscarUsuarioPorRol(List<Usuario> usuario);
 
-    String contraCript(String paramString) throws Exception;
+    String contraCript(String contrasena) throws Exception;
 
-    Usuario buscarUsuarioPorEmail(Usuario paramUsuario);
+    Usuario buscarUsuarioPorEmail(Usuario usuario);
 }

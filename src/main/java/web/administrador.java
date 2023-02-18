@@ -71,9 +71,9 @@ public class administrador extends HttpServlet {
                     id = request.getParameter("id");
                     System.out.println(id);
                     req = new Usuario(id);
-                    System.out.println("usuario creado con exito" + req);
+                    System.out.println("usuario creado con exito en editar servet" + req);
                     req = this.usuarioDao.buscarUsuarioPorEmail(req);
-                    System.out.println("devuelta en administrador servlet" + req);
+                    System.out.println("devuelta en administrador servlet edit" + req);
                     sesion.setAttribute("usuario", req);
                     response.sendRedirect("editarperfil.jsp");
                     break;

@@ -49,12 +49,12 @@
                                         <td> ${usuario.rolesidRol}</td>
                                      
                                         <td>
-                                            <a href="administrador?accion=editar" class="btn btn- btn-warning">
+                                            <a href="administrador?accion=editar&id=${usuario.email}" class="btn btn- btn-warning">
                                                 <i class="fas fa-angle-double-right"></i> Editar
                                             </a>
                                         </td>
                                          <td>
-                                            <a href="administrador?accion=eliminar" class="btn btn- btn-danger">
+                                            <a href="administrador?accion=eliminar&id=${usuario.email}" class="btn btn- btn-danger">
                                                 <i class="fas fa-angle-double-right"></i> Eliminar
                                             </a>
                                         </td>

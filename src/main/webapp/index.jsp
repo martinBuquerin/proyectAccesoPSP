@@ -15,15 +15,13 @@
         <title>Document</title>
 
 
-        <link rel="stylesheet" type="text/css" href="recursos/bootStrap/css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="recursos/fontAw/css/all.css">
-        <link rel="stylesheet" type="text/css" href="recursos/estilo.css">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     </head>
 
     <body>
-        <jsp:include page="paginas/header.jsp" />
+        <jsp:include page="header.jsp" />
 
         <main>
 
@@ -38,13 +36,13 @@
                             <input type="text" class="form-control" name="servicio" id="servicio">
 
                         </div>
-                
-                        <div class="col mb-3">
-                    
-                            <div class="contenedor-btn">
-                            <input type="submit" name="enviar" value="Enviar" class="btn-send bg-primary">
 
-                        </div> 
+                        <div class="col mb-3">
+
+                            <div class="contenedor-btn">
+                                <input type="submit" name="enviar" value="Enviar" class="btn-send bg-primary">
+
+                            </div> 
                         </div>
                     </div>
 
@@ -142,11 +140,13 @@
 
 
         </main>
-        <jsp:include page="paginas/footer.jsp" />
-        <script src="recursos/fontAw/js/all.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="recursos/bootStrap/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        <script src="recursos/java.js"></script>
+        <jsp:include page="footer.jsp" />
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
     </body>
+
 
 </html>
