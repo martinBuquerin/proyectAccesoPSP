@@ -1,35 +1,34 @@
-/*    */ package service;
-/*    */ 
-/*    */ import data.iContrataDao;
-/*    */ import domain.Contrata;
-/*    */ import java.util.List;
-/*    */ import javax.ejb.Stateless;
-/*    */ import javax.inject.Inject;
-/*    */ 
-/*    */ @Stateless
-/*    */ public class impContratoService implements iContratoService {
-/*    */   @Inject
-/*    */   private iContrataDao contratoDao;
-/*    */   
-/*    */   public List<Contrata> seleccionaContrato() {
-/* 27 */     return this.contratoDao.seleccionaContrato();
-/*    */   }
-/*    */   
-/*    */   public void insertarContrato(Contrata contrato) {
-/* 32 */     this.contratoDao.insertarContrato(contrato);
-/*    */   }
-/*    */   
-/*    */   public void eliminarContrato(Contrata contrato) {
-/* 37 */     this.contratoDao.eliminarContrato(contrato);
-/*    */   }
-/*    */   
-/*    */   public void actualizarContrato(Contrata contrato) {
-/* 42 */     this.contratoDao.eliminarContrato(contrato);
-/*    */   }
-/*    */ }
+package service;
 
+import data.iContrataDao;
+import domain.Contrata;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 
-/* Location:              C:\Users\Martin\Documents\DATA\segundo\accesoAdatos\paraPresentar\WEB-INF\classes\!\service\impContratoService.class
- * Java compiler version: 8 (52.0)
- * JD-Core Version:       1.1.3
- */
+@Stateless
+public class impContratoService implements iContratoService {
+
+    @Inject
+    private iContrataDao contratoDao;
+
+    @Override
+    public List<Contrata> seleccionaContrato() {
+        return this.contratoDao.seleccionaContrato();
+    }
+
+    @Override
+    public void insertarContrato(Contrata contrato) {
+        this.contratoDao.insertarContrato(contrato);
+    }
+
+    @Override
+    public void eliminarContrato(Contrata contrato) {
+        this.contratoDao.eliminarContrato(contrato);
+    }
+
+    @Override
+    public void actualizarContrato(Contrata contrato) {
+        this.contratoDao.eliminarContrato(contrato);
+    }
+}

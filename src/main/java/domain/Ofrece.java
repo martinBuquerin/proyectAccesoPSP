@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -23,10 +18,6 @@ import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author Martin
- */
 @Entity
 @Table(name = "ofrece")
 @XmlRootElement
@@ -112,7 +103,14 @@ public class Ofrece implements Serializable {
 
     @Override
     public String toString() {
-        return "domain.Ofrece[ idOfrece=" + idOfrece + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" idOfrece: ").append(idOfrece);
+        sb.append(" servicioidServicio: ").append(servicioidServicio);
+        sb.append(" usuarioEmail: ").append(usuarioEmail);
+        sb.append(" contrataList: ").append(contrataList);
+        return sb.toString();
     }
-    
+
+  
+
 }

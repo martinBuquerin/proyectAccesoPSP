@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package domain;
 
 import java.io.Serializable;
@@ -27,10 +23,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author Martin
- */
+
 @Entity
 @Table(name = "usuario")
 @XmlRootElement
@@ -106,6 +99,13 @@ public class Usuario implements Serializable {
         this.email = email;
         this.fechaAlta = fechaAlta;
         this.contrasena = contrasena;
+    }
+
+    public Usuario(String email, Date fechaAlta, String contrasena, Roles rol) {
+        this.email = email;
+        this.fechaAlta = fechaAlta;
+        this.contrasena = contrasena;
+        this.rolesidRol = rol;
     }
 
     public String getNombre() {
@@ -245,7 +245,24 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "domain.Usuario[ email=" + email + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append("nombre: ").append(nombre);
+        sb.append(" apellido: ").append(apellido);
+        sb.append(" email: ").append(email);
+        sb.append(" telefono: ").append(telefono);
+        sb.append(" fechaAlta: ").append(fechaAlta);
+        sb.append(" contrasena: ").append(contrasena);
+        sb.append(" imagen: ").append(imagen);
+        sb.append(" pausarCuenta: ").append(pausarCuenta);
+        sb.append(" nombreEmpresa: ").append(nombreEmpresa);
+        sb.append(" descripcionEmpresa: ").append(descripcionEmpresa);
+        sb.append(" ofreceList: ").append(ofreceList);
+        sb.append(" direccionList: ").append(direccionList);
+        sb.append(" rolesidRol: ").append(rolesidRol);
+        sb.append(" contrataList: ").append(contrataList);
+     
+        return sb.toString();
     }
-    
+
+  
 }

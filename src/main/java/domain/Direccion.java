@@ -169,7 +169,18 @@ public class Direccion implements Serializable {
 
     @Override
     public String toString() {
-        return "domain.Direccion[ idDireccion=" + idDireccion + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" idDireccion:").append(idDireccion);
+        sb.append(" calle: ").append(calle);
+        sb.append(" numero: ").append(numero);
+        sb.append(" piso: ").append(piso);
+        sb.append(" cp: ").append(cp);
+        sb.append(" localidad: ").append(localidad);
+        sb.append(" provincia: ").append(provincia);
+        sb.append(" pais: ").append(pais);
+        sb.append(" usuarioEmail: ").append(usuarioEmail);
+
+        return sb.toString();
     }
-    
+
 }

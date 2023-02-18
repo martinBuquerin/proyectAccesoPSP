@@ -97,7 +97,14 @@ public class Contrata implements Serializable {
 
     @Override
     public String toString() {
-        return "domain.Contrata[ idContrato=" + idContrato + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" idContrato: ").append(idContrato);
+        sb.append(" ofreceidOfrece: ").append(ofreceidOfrece);
+        sb.append(" usuarioEmail: ").append(usuarioEmail);
+;
+        return sb.toString();
     }
+
+   
     
 }

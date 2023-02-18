@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -23,10 +18,6 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-/**
- *
- * @author Martin
- */
 @Entity
 @Table(name = "roles")
 @XmlRootElement
@@ -59,6 +50,11 @@ public class Roles implements Serializable {
 
     public Roles(Integer idRol, String nombre) {
         this.idRol = idRol;
+        this.nombre = nombre;
+    }
+
+    public Roles(String nombre) {
+
         this.nombre = nombre;
     }
 
@@ -109,7 +105,13 @@ public class Roles implements Serializable {
 
     @Override
     public String toString() {
-        return "domain.Roles[ idRol=" + idRol + " ]";
+        StringBuilder sb = new StringBuilder();
+        sb.append(" idRol: ").append(idRol);
+        sb.append(" nombre: ").append(nombre);
+        sb.append(" usuarioList: ").append(usuarioList);
+        return sb.toString();
     }
-    
+
+   
+
 }
