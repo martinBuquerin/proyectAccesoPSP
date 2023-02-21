@@ -36,7 +36,7 @@
                             <img src="./imagenes/jardin2.jpg" class="d-block w-100" style="height: 20rem;" alt="jardineria">
                         </div>
                         <div class="carousel-item" data-bs-interval="3500">
-                            <img src="./    imagenes/pintor.jpg" class="d-block w-100" style="height: 20rem;" alt="pintor">
+                            <img src="./imagenes/pintor.jpg" class="d-block w-100" style="height: 20rem;" alt="pintor">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -75,7 +75,7 @@
                 </section>
                 <!--/Buscador-->
 
-                <a href="administrador?accion=verUsuarios">usus</a>
+                //<a href="administrador?accion=verUsuarios">usus</a>
                 <!--Tarjetas-->
                 <section class="d-flex flex-column  pt-5  text-center w-100 m-auto " style="padding-top:60px;padding-bottom:60px;">
                     <div class="row w-75  mx-auto justify-content-center border-top border-3" id="tarjetas">

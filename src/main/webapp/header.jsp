@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 ml-6 mb-lg-0 " style="width: 500px;">
                 <li class="nav-item ">
-                    <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
+                    <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#equipo">Servicios</a>
@@ -72,8 +72,8 @@
         </button>
         <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
-            <ul class="navbar-nav me-auto mb-2  ">
-                <li class="nav-item "><a class="nav-link active" style="width: 390px;" aria-current="page" href="#">            </a></li>
+            <ul class="navbar-nav ms-auto mb-2  ">
+                <li class="nav-item "><a class="nav-link active" aria-current="page" href="#">            </a></li>
 
 
                 <li class="nav-item ">
@@ -105,54 +105,64 @@
 <% }%>
 
 
-<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-<div class="modal-dialog">
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" style="margin-top:9em;  "aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
 
-<div class="modal-content d-flex justify-content-center">
+        <div class="modal-content d-flex justify-content-center">
 
-  <div class="row">
-    <div class="col pt-4" style="padding-left:200px;">
+            <div class="row">
+                <div class="col pt-4" style="padding-left:200px;">
 
-      <h1 class="p-2 fs-2 text-center">Login</h1>
+                    <h1 class="p-2 fs-2 text-center">Login</h1>
+                </div>
+                <div class="col" style="width:150px;">
+                    <button type="submit" class="btn btn-danger p-1 float-end px-3 m-2" data-dismiss="modal"  name="salir" >x</button>
+                </div>
+            </div>
+            <div class="modal-body p-2 ">
+                <form action="usuario?accion=validarLogin" method="POST">
+                    <div class="form-group p-2">
+                        <div class="row">
+                            <div class="col " style="padding-left:7em; padding-top: 0.5em;">
+                                 <p class="fs-5 font-weight-normal">Email</p>
+                            </div>
+                            <div class="col">
+                                <input type="email" class="form-control mt-1" name="email" style="width: 12em; height: 2em; margin-right:4em;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group p-2 pb-4 border-2 border-gray border-bottom ">
+                        <div class="row">
+                            <div class="col " style="padding-left:5em; padding-top: 0.5em;">
+                                <p class="fs-5 font-weight-normal">Contraseña</p>
+                            </div>
+                            <div class="col">
+                                <input type="password" class="form-control mt-1" name="contrasena" style="width: 12em;  height: 2em; margin-right:4em;">
+                            </div>
+                        </div>
+                        <p  class="text-end m-2"> <a href="#">He olvidado mi contraseña.</a></p>
+                    </div>
+
+                    <div class="form-group p-2">
+                        <div class="row">
+                            <div class="col d-flex justify-content-center ">
+                                <p class="f-1 m-2">Conectarse con <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span><span class="text-primary">g</span>l<span class="text-success">e</span></p>
+                                <img class="m-2"src="./imagenes/google-icon.svg" height="24px" width="24px"/>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col text-center p-2 mt-2">
+
+                        <button type="submit" class="btn btn-success mb-3" name="enviar" value="Enviar">Iniciar Sesión</button>
+                        <p>¿No tienes una cuenta? <a href="#">Registrate</a></p>
+                    </div>
+                </form>
+            </div>
+            <!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
+        </div>
     </div>
-    <div class="col" style="width:150px;">
-    <button type="submit" class="btn btn-danger p-1 float-end" data-dismiss="modal" style="margin-top:1rem;margin-right:1rem" name="salir" value="X">X</button>
-  </div>
-  </div>
-  <div class="modal-body p-2 ">
-    <form action="usuario?accion=validarLogin" method="POST">
-      <div class="form-group p-2">
-        <div class="row">
-          <div class="col ">
-            <label for="email" style="padding-left:7em ; padding-top: 0.5em;">Email</label>
-          </div>
-          <div class="col">
-            <input type="email" class="form-control mt-1" name="email" style="width: 12em; height: 2em; margin-right:4em;">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group p-2">
-        <div class="row">
-          <div class="col " style="padding-left:5em; padding-top: 0.5em;">
-            <label for="password">Contraseña</label>
-          </div>
-          <div class="col">
-            <input type="password" class="form-control mt-1" name="contrasena" style="width: 12em;  height: 2em; margin-right:4em;">
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col text-center p-2 mt-2">
-
-        <button type="submit" class="btn btn-success" name="enviar" value="Enviar">Entrar</button>
-      </div>
-    </form>
-  </div>
-<!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
-</div>
-</div>
 
 </div>
 
