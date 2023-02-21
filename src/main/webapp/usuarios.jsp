@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="card-header">
-                            <h4>Listado Clientes</h4>
+                            <h4>Listado Profesionales</h4>
                         </div>
                         <table class="table table-striped">
                             <thead class="thead-dark">
@@ -44,9 +44,9 @@
                                         <td> ${usuario.apellido}</td>
                                         <td> ${usuario.email}</td>
                                         <td> ${usuario.telefono}</td>
-                                        <td> ${usuario.fechaAlta}</td>
+                                        <td> ${usuario.fechaAlta})"</td>
                                         <td> ${usuario.contrasena}</td>
-                                        <td> ${usuario.rolesidRol}</td>
+                                        <td> ${usuario.rolesidRol.getNombre()}</td>
                                      
                                         <td>
                                             <a href="administrador?accion=editar&id=${usuario.email}" class="btn btn- btn-warning">
@@ -65,7 +65,7 @@
                     </div>
 
                     <td>
-                        <a href="index.jsp" class="btn btn-secondary">
+                        <a href="index.jsp" class="btn btn-primary">
                             <i class="fas fa-angle-double-right"></i> Inicio
                         </a>
                     </td>

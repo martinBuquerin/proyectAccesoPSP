@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 @Stateless
 public class impUsuarioDao implements iUsuarioDao {
@@ -28,6 +29,19 @@ public class impUsuarioDao implements iUsuarioDao {
         Usuario usuario = (Usuario) buscarPorEmail.getSingleResult();
         System.out.println("usuario creado con exito en impUsuarioDao" + usuario);
         return usuario;
+    }
+
+    @Override
+    public List<Usuario> buscarPorServicio(String servicio) {
+
+        TypedQuery<Usuario> consulta = em.createQuery(
+                "SELECT u FROM Usuario u WHERE u.nombreEmpresa LIKE :nombre ", Usuario.class);
+        
+      
+        List<Usuario> resultado = consulta.setParameter("nombre", "%"+servicio+"%").getResultList();
+        
+     
+        return resultado;
     }
 
     @Override

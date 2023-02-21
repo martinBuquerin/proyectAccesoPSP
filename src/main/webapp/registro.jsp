@@ -100,12 +100,12 @@
                     <div class="contenedor">   
                         <div class="form-group">
 
-                            <input type="text" id="nombre" name="email" placeholder="Email" class="input-100">
+                            <input type="text" id="email" name="email" placeholder="Email" class="input-100">
 
                         </div>
                         <div class="form-group">
 
-                            <input type="text" id="apellidos" name="contrasena" placeholder="Contraseña" class="input-100">
+                            <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" class="input-100">
                         </div>
                         <select name="rol" class="input-100">
                             <c:forEach var="rol" items="${roles}" varStatus="status">

@@ -10,7 +10,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
-
 @Stateless
 public class impUsuarioService implements iUsuarioService {
 
@@ -58,6 +57,15 @@ public class impUsuarioService implements iUsuarioService {
             }
         }
         return usuarios;
+    }
+
+    @Override
+    public List<Usuario> buscarPorServicio(String servicio) {
+      
+        
+        List<Usuario> usuario = this.usuarioDao.buscarPorServicio(servicio);
+    
+        return usuario;
     }
 
     @Override

@@ -48,27 +48,28 @@ public class usuario extends HttpServlet {
             switch (accion) {
                 case "buscarServicio":
                     nombre = request.getParameter("servicio");
-                    System.out.println(nombre);
+                    //System.out.println(nombre);
                     usuarios = this.usuarioDao.seleccionaUsuario();
-                    System.out.println(usuarios);
+                    //System.out.println(usuarios);
                     profesionales = this.usuarioDao.buscarUsuarioPorRol(usuarios);
-                    System.out.println(profesionales);
+                    profesionales = this.usuarioDao.buscarPorServicio(nombre);
                     sesion.setAttribute("profesionales", profesionales);
-                    response.sendRedirect("profesionales.jsp");
+                    //System.out.println("resultado busqueda"+profesionales);
+                    response.sendRedirect("busqueda.jsp");
                     break;
                 case "validarLogin":
-                    email = request.getParameter("email");
-                    contrasena = request.getParameter("contrasena");
-                    System.out.println("email " + email);
-                    System.out.println("contraseña " + contrasena);
+                    String emailLog = request.getParameter("email");
+                    String contrasenaLog = request.getParameter("contrasena");
+                    System.out.println("email " + emailLog);
+                    System.out.println("contraseña " + contrasenaLog);
                     try {
-                        contrasena = this.usuarioDao.contraCript(contrasena);
+                        contrasena = this.usuarioDao.contraCript(contrasenaLog);
                         List<Usuario> usuariosLogin = this.usuarioDao.seleccionaUsuario();
                         System.out.println(usuariosLogin);
                         for (int i = 0; i < usuariosLogin.size(); i++) {
                             String correoUsuario = ((Usuario) usuariosLogin.get(i)).getEmail();
                             String contraUsuario = ((Usuario) usuariosLogin.get(i)).getContrasena();
-                            if (correoUsuario.equals(email) && contraUsuario.equals(contrasena)) {
+                            if (correoUsuario.equals(emailLog) && contraUsuario.equals(contrasena)) {
                                 System.out.println("conectado");
                                 correoUsuario = ((Usuario) usuariosLogin.get(i)).getEmail();
                                 String rolUsuario = ((Usuario) usuariosLogin.get(i)).getRolesidRol().getNombre();
@@ -85,6 +86,8 @@ public class usuario extends HttpServlet {
                                     System.out.println(usuariosLogin.get(i));
                                     response.sendRedirect("profesional.jsp");
                                 }
+                            }else{
+                                         response.sendRedirect("index.jsp");
                             }
                         }
                     } catch (Exception ex) {

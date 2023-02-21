@@ -7,10 +7,16 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="https://kit.fontawesome.com/c6b31a7173.css" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<title>miWeB.</title>
 <%
     String correo = (String) session.getAttribute("email");
 
@@ -23,35 +29,36 @@
     if (correo == null) {
 %> 
 
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img style="width: 90px;height: 50px;" src="../imagenes/img1.jpg"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <span class="fs-5 text-success fw-bold">miWeB.</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
 
-            <ul class="navbar-nav me-auto mb-2  ">
-                <li class="nav-item "><a class="nav-link active" style="width: 390px;" aria-current="page" href="#">            </a></li>
-
-
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 ml-6 mb-lg-0 " style="width: 500px;">
                 <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="#">Servicios</a>
+                    <a class="nav-link" aria-current="page" href="index.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Provincias</a>
+                    <a class="nav-link" href="#equipo">Servicios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beneficios</a>
+                    <a class="nav-link" href="#seccion-contacto">Soy profesional</a>
                 </li>
             </ul>
-            <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModal"><i class="far fa-user"></i>Identificate</a>
+            <form class="d-flex">
+                <!--<a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#modalRegistroAdmninistrador"><i class="far fa-user"></i>Identifícate</a>-->
+                <button type="button" id="logIn" class="btn btn-success btn-primary-outline-success" data-toggle="modal" data-target="#modalLogin"><i class="far fa-user" style="padding-right:4px;"></i>Identifícate</button>
+
+            </form>
         </div>
+
     </div>
 </nav>
-
 
 <% } else {
 
@@ -92,176 +99,64 @@
 
 
         </div>
-    </div>
+    </div> 
 </nav>
 
 <% }%>
-<div class="modal fade" id="myModal">
-    <form action="usuario?accion=validarLogin" method="post" class="form-registro" role="form">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="m-2 ">
-
-                    <button type="button" class="btn float-end" data-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
-                </div>
 
 
-                <div class="bg-white p-5 rounded-5 text-secondary shadow" >
-                    <div class="d-flex justify-content-center rounded-5">
-                        <img src="./imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
-                    </div>
-                    <div class="text-center fs-1 fw-bold rounded-5">Login</div>
-                    <div class="input-group mt-4 rounded-5" >
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog">
 
-                        <input class="form-control bg-light rounded-5" type="text" name="email" placeholder="Email" />
-                    </div>
-                    <div class="input-group mt-1 rounded-5">
+<div class="modal-content d-flex justify-content-center">
 
-                        <input class="form-control bg-light rounded-5" type="password" name="contrasena" placeholder="Contraseña" />
-                    </div>
-                    <div class="d-flex justify-content-around mt-1 rounded-5">
-                        <div class="d-flex align-items-center gap-1 rounded-5">
-                            <input class="form-check-input" type="checkbox" />
-                            <div class="pt-1" style="font-size: 0.9rem">Recuerdame</div>
-                        </div>
-                        <div class="pt-1">
-                            <a href="#" class="text-decoration-none text-success fw-semibold fst-italic rounded-5"
-                               style="font-size: 1.5rem">¿Ha olvidado su contraseña?</a>
-                        </div>
-                    </div>
-                    <input class="btn btn-success text-white w-100 mt-4 fw-semibold shadow-sm rounded-5" type="submit">
-                    <div class="d-flex gap-1 justify-content-center mt-1 rounded-5">
-                        <div>¿No tienes cuenta?</div>
-                        <a href="" data-toggle="modal" data-target="#modalRegistro" data-dismiss="modal"  class="text-decoration-none text-success fw-semibold rounded-5">Registrate</a>
-                    </div>
-                    <div class="p-3">
-                        <div class="border-bottom text-center rounded-5" style="height: 0.9rem">
-                            <span class="bg-white px-3">or</span>
-                        </div>
-                    </div>
-                    <div class="btn d-flex gap-2 justify-content-center border mt-3 shadow-sm rounded-5">
-                        <img src="./imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
-                        <div class="fw-semibold text-secondary rounded-5">Continua con Google</div>
-                    </div>
-                </div>
+  <div class="row">
+    <div class="col pt-4" style="padding-left:200px;">
 
-
-
-            </div>
-
-        </div>
-    </form>
-</div>
-
-<%
-    List<Roles> rol = (List<Roles>) session.getAttribute("modalRegistro");
-    System.out.println("roles en header" + rol);
-    if (rol != null) {
-
-    }
-%>
-<div class="modal fade" id="modalRegistro">
-    <form action="administrador?accion=insertar" method="post" class="form-registro" role="form">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="m-2 ">
-
-                    <button type="button" class="btn float-end" data-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
-                </div>
-
-
-                <div class="bg-white p-5 rounded-5 text-secondary shadow" >
-                    <div class="d-flex justify-content-center rounded-5">
-                        <img src="./imagenes/login-icon.svg" alt="login-icon" style="height: 7rem" />
-                    </div>
-                    <div class="text-center fs-1 fw-bold rounded-5">Registro</div>
-                    <div class="input-group mt-4 rounded-5" >
-
-                        <input class="form-control bg-light rounded-5" type="email" name="email" placeholder="Email" />
-                    </div>
-                    <div class="input-group mt-1 rounded-5">
-
-                        <input class="form-control bg-light rounded-5" type="password" name="contrasena" placeholder="Contraseña" />
-                    </div>
-
-                    <div class="input-group mt-1 rounded-5">
-
-
-                        <select name="rol" class="form-control bg-light rounded-5" >
-                            <option class="form-control bg-light rounded-5">Selecciona un rol:</option>
-
-                            <<option value="Administrador">Administrador</option>
-                            <<option value="Profesional">Profesional</option>
-                            <<option value="Cliente">Cliente</option>
-
-
-                        </select>
-
-
-
-
-                    </div>
-
-
-                    <input class="btn btn-success text-white w-100 mt-4 fw-semibold shadow-sm rounded-5" type="submit">
-
-                    <div class="p-3">
-                        <div class="border-bottom text-center rounded-5" style="height: 0.9rem">
-                            <span class="bg-white px-3">or</span>
-                        </div>
-                    </div>
-                    <div class="btn d-flex gap-2 justify-content-center border mt-3 shadow-sm rounded-5">
-                        <img src="./imagenes/google-icon.svg" alt="google-icon" style="height: 1.6rem" />
-                        <div class="fw-semibold text-secondary rounded-5">Continua con Google</div>
-                    </div>
-                </div>
-
-
-
-            </div>
-
-        </div>
-    </form>
-</div>
-
-
-
-
-<div class="modal fade" id="myModalLogueado">
-    <div class="modal-dialog ">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="m-2 ">
-
-                <button type="button" class="btn float-end" data-dismiss="modal"><i class="fa-solid fa-circle-xmark"></i></button>
-            </div>
-            <div class="modal-body ">
-
-
-                <form class="p-4 mt-4" action="" method="POST">
-
-                    <div class="d-flex justify-content-center align-content-center mt-4 ">
-                        <a data-toggle="modal" data-target="#modificarPerfil" data-dismiss="modal" class="btn btn-success">Perfil</a>
-                    </div>
-                    <hr>
-
-                    <div class="d-flex justify-content-center align-content-center mt-4">
-                        <a href="cerrarSesion.jsp" class="btn btn-success">Cerrar Sesion</a>
-                    </div>
-                </form>
-
-
-            </div>
-
-        </div>
-
+      <h1 class="p-2 fs-2 text-center">Login</h1>
     </div>
+    <div class="col" style="width:150px;">
+    <button type="submit" class="btn btn-danger p-1 float-end" data-dismiss="modal" style="margin-top:1rem;margin-right:1rem" name="salir" value="X">X</button>
+  </div>
+  </div>
+  <div class="modal-body p-2 ">
+    <form action="usuario?accion=validarLogin" method="POST">
+      <div class="form-group p-2">
+        <div class="row">
+          <div class="col ">
+            <label for="email" style="padding-left:7em ; padding-top: 0.5em;">Email</label>
+          </div>
+          <div class="col">
+            <input type="email" class="form-control mt-1" name="email" style="width: 12em; height: 2em; margin-right:4em;">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group p-2">
+        <div class="row">
+          <div class="col " style="padding-left:5em; padding-top: 0.5em;">
+            <label for="password">Contraseña</label>
+          </div>
+          <div class="col">
+            <input type="password" class="form-control mt-1" name="contrasena" style="width: 12em;  height: 2em; margin-right:4em;">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col text-center p-2 mt-2">
+
+        <button type="submit" class="btn btn-success" name="enviar" value="Enviar">Entrar</button>
+      </div>
+    </form>
+  </div>
+<!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
 </div>
+</div>
+
+</div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

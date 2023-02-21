@@ -23,4 +23,6 @@ public interface iUsuarioService {
     String contraCript(String contrasena) throws Exception;
 
     Usuario buscarUsuarioPorEmail(Usuario usuario);
+
+    List<Usuario> buscarPorServicio(String servicio);
 }

@@ -41,12 +41,12 @@ public class administrador extends HttpServlet {
 
             String idEliminar;
             Usuario eliminar;
-            String id;
+            String id;  
             Usuario req;
 
             List<Usuario> usuarios;
             List<Usuario> usuariosPro;
-
+ 
             List<Usuario> profesionales;
             List<Direccion> direcciones;
 
