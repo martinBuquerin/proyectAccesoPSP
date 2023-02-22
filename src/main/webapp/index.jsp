@@ -68,19 +68,13 @@
                                 </div>
                             </div>
                         </div>
-
                     </form>
-
-
                 </section>
                 <!--/Buscador-->
 
-                //<a href="administrador?accion=verUsuarios">usus</a>
                 <!--Tarjetas-->
                 <section class="d-flex flex-column  pt-5  text-center w-100 m-auto " style="padding-top:60px;padding-bottom:60px;">
                     <div class="row w-75  mx-auto justify-content-center border-top border-3" id="tarjetas">
-
-
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">
@@ -95,8 +89,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">
@@ -111,8 +103,6 @@
                                 </div>
                             </div>
                         </div>
-
-
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">

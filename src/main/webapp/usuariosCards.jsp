@@ -24,7 +24,7 @@
     <body>
 
         <div class="container  d-flex" >
-            <div class="row">
+            <div class="row row-cols-auto">
 
                 <c:forEach var="usuario" items="${usuarios}" varStatus="status">
                     <div class="card m-3" style="width: 21rem;">

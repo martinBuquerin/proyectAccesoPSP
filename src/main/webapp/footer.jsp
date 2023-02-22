@@ -3,7 +3,7 @@
 
 
   <!--Footer-->
-  <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap bg-light mb-o">
+  <footer class="w-100  d-flex  align-items-center justify-content-center flex-wrap bg-light mb-0">
     <div class="container p-1">
       <div class="row row-cols-4 justify-content-center">
         <div class="col m-2 ">

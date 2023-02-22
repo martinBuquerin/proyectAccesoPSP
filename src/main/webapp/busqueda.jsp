@@ -50,7 +50,7 @@
                             <div class="col mb-2 mt-1">
                                 <p style=" width: 99% ;color: #78BE20; font-weight: 600;font-style: normal;text-align: center;padding-top: 7px;">
                                     Ver ficha completa</p>
-                                <a href="#" style=" width: 100% ;background-color:#78BE20; color: #fff; font-weight: 600;font-style: normal;" class=" btn mb-4" data-toggle="modal" data-target="#myModal">Nuevo Chat</a>
+                                <a href="usuario?accion=contratarServicio&profesional=${resultado.getEmail()}" style=" width: 100% ;background-color:#78BE20; color: #fff; font-weight: 600;font-style: normal;" class=" btn mb-4" >Nuevo Chat</a>
 
                             </div>
 
