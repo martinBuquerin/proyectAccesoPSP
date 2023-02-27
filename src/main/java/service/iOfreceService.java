@@ -7,7 +7,11 @@ import javax.ejb.Local;
 @Local
 public interface iOfreceService {
 
-    List<Ofrece> seleccionaServicioOfrecido();
+    List<Ofrece> seleccionaOfrece();
+
+    Ofrece buscarOfrecePorId(int ofrece);
+
+    List<Ofrece> buscarOfrecePorEmail(String usuario);
 
     void insertarServicioOfrecido(Ofrece ofrece);
 

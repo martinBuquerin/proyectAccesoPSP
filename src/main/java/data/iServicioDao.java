@@ -2,8 +2,6 @@ package data;
 
 import domain.Servicio;
 import java.util.List;
-import javax.ejb.Local;
-
 
 public interface iServicioDao {
 

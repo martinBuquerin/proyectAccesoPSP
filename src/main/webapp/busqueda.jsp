@@ -1,7 +1,20 @@
+<%@page import="java.util.Set"%>
+<%@page import="domain.Usuario"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="es_ES" />
 <!DOCTYPE html>
+<%
+    Usuario correo = (Usuario) session.getAttribute("email");
+
+   // session.setAttribute("correo", correo.getEmail());
+    if (correo != null) {
+        System.out.println("correo desde el header " + correo);
+    } else {
+        System.out.println("no tienes corre");
+    }
+%>
+
 <html lang="en">
 
     <head>
@@ -26,23 +39,28 @@
         <div class="container-fluid m-4 d-flex justify-content-center">
             <div class="row row-cols-auto justify-content-center m-4">
 
+                <%
+                    if (correo == null) {
+                %> 
                 <c:forEach var="resultado" items="${profesionales}" varStatus="status">
 
 
 
                     <div class="row border border-gray border-1 rounded-3 shadow bg-body rounded" style="width: 22rem; margin:5px">
                         <div class="col mt-2">
-                            <h5 class="card-title pt-4">${resultado.nombreEmpresa}</h5>
+                            <h5 class="card-title pt-4">${resultado.servicioidServicio.getNombre()}</h5>
+                            <h5 class="card-title pt-4">${resultado.usuarioEmail.nombreEmpresa}</h5>
                             <div class="row">
                                 <div class="col mt-2 ml-2">
-                                    <p>${resultado.descripcionEmpresa}</p>
+                                    <p>${resultado.usuarioEmail.descripcionEmpresa}</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col mt-2 pt-4" >
                             <!-- <?php echo "<img style='margin-left:40px;' src='" . $result->imagen . "' width='120' height='100'>" . "</img>"; ?>-->
-                         <img height="100" width="80" src="data:image/jpeg;base64,'.base64_encode${resultado.imagen}.'" class="card-img-top" alt="..." />
+                            <img th:src="@{'data:image/jpeg;base64,''..base64_encode${resultado.usuarioEmail.imagen}.'}">
+                           <!--  <img height="100" width="80" src="data:image/jpeg;base64,'.base64_encode${resultado.usuarioEmail.imagen}.'" class="card-img-top" alt="..." />-->
                         </div>
 
                         <div class="row m-0">
@@ -50,7 +68,7 @@
                             <div class="col mb-2 mt-1">
                                 <p style=" width: 99% ;color: #78BE20; font-weight: 600;font-style: normal;text-align: center;padding-top: 7px;">
                                     Ver ficha completa</p>
-                                <a href="usuario?accion=contratarServicio&profesional=${resultado.getEmail()}" style=" width: 100% ;background-color:#78BE20; color: #fff; font-weight: 600;font-style: normal;" class=" btn mb-4" >Nuevo Chat</a>
+                                <a href="" style=" width: 100% ;background-color:#78BE20; color: #fff; font-weight: 600;font-style: normal;" class=" btn mb-4" data-toggle="modal" data-target="#modalLogin" >Nuevo Chat</a>
 
                             </div>
 
@@ -64,10 +82,56 @@
 
                     </div>
 
+
                 </c:forEach> 
+                <%
+                } else {
+                session.setAttribute("correo", correo.getEmail());
+                %> 
+                <c:forEach var="resultado" items="${profesionales}" varStatus="status">
 
 
 
+                    <div class="row border border-gray border-1 rounded-3 shadow bg-body rounded" style="width: 22rem; margin:5px">
+                           <div class="col mt-2">
+                            <h5 class="card-title pt-4">${resultado.servicioidServicio.getNombre()}</h5>
+                            <h5 class="card-title pt-4">${resultado.usuarioEmail.nombreEmpresa}</h5>
+                            <div class="row">
+                                <div class="col mt-2 ml-2">
+                                    <p>${resultado.usuarioEmail.descripcionEmpresa}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mt-2 pt-4" >
+                            <!-- <?php echo "<img style='margin-left:40px;' src='" . $result->imagen . "' width='120' height='100'>" . "</img>"; ?>-->
+                              <img th:src="@{'data:image/jpeg;base64,''..base64_encode${resultado.usuarioEmail.imagen}.'}">
+                           <!--  <img height="100" width="80" src="data:image/jpeg;base64,'.base64_encode${resultado.usuarioEmail.imagen}.'" class="card-img-top" alt="..." />-->
+                        </div>
+
+                        <div class="row m-0">
+
+                            <div class="col mb-2 mt-1">
+                                <p style=" width: 99% ;color: #78BE20; font-weight: 600;font-style: normal;text-align: center;padding-top: 7px;">
+                                    Ver ficha completa</p>
+                                <a href="usuario?accion=contratarServicio&profesional=${resultado.idOfrece}&correo=${correo}" style=" width: 100% ;background-color:#78BE20; color: #fff; font-weight: 600;font-style: normal;" class=" btn mb-4" >Nuevo Chat</a>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+
+                </c:forEach> 
+                <%          
+                    }
+                %> 
             </div>
 
         </div>

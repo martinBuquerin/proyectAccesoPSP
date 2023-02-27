@@ -2,7 +2,6 @@ package data;
 
 import domain.Roles;
 import java.util.List;
-import javax.ejb.Local;
 
 
 public interface iRolesDao {

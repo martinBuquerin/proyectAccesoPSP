@@ -1,7 +1,7 @@
-
 package domain;
 
 import java.io.Serializable;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
@@ -18,11 +18,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
-
 
 @Entity
 @Table(name = "usuario")
@@ -87,6 +87,8 @@ public class Usuario implements Serializable {
     private Roles rolesidRol;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuarioEmail")
     private List<Contrata> contrataList;
+    
+
 
     public Usuario() {
     }
@@ -223,6 +225,9 @@ public class Usuario implements Serializable {
         this.contrataList = contrataList;
     }
 
+
+ 
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -260,9 +265,8 @@ public class Usuario implements Serializable {
         sb.append(" direccionList: ").append(direccionList);
         sb.append(" rolesidRol: ").append(rolesidRol);
         sb.append(" contrataList: ").append(contrataList);
-     
+
         return sb.toString();
     }
 
-  
 }

@@ -46,6 +46,13 @@ public class Contrata implements Serializable {
 
     public Contrata() {
     }
+    
+    public Contrata(Ofrece ofreceidOfrece,Usuario usuarioEmail) {
+        this.ofreceidOfrece = ofreceidOfrece;
+        this.usuarioEmail = usuarioEmail;
+    }
+    
+ 
 
     public Contrata(Integer idContrato) {
         this.idContrato = idContrato;

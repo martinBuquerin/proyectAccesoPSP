@@ -2,6 +2,7 @@ package service;
 
 import data.iContrataDao;
 import domain.Contrata;
+import domain.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -30,5 +31,10 @@ public class impContratoService implements iContratoService {
     @Override
     public void actualizarContrato(Contrata contrato) {
         this.contratoDao.eliminarContrato(contrato);
+    }
+
+    @Override
+    public List<Contrata> buscarContratosPorId(Usuario usuario) {
+       return this.contratoDao.buscarContratosPorId(usuario);
     }
 }

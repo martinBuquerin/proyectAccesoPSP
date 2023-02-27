@@ -45,7 +45,7 @@
                                         <td>${direcciones.localidad}</td>
                                         <td>${direcciones.provincia}</td>
                                         <td>${direcciones.pais}</td>
-                                        <td>${direcciones.usuarioEmail}</td>
+                                        <td>${direcciones.usuarioEmail.getNombre()}</td>
 
                                         <td>
                                             <a href="" class="btn btn-secondary">

@@ -1,3 +1,11 @@
+<%@page import="web.imagen"%>
+<%@page import="java.util.logging.Logger"%>
+<%@page import="java.util.logging.Level"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.util.Base64"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="es_ES" />
@@ -27,8 +35,11 @@
             <div class="row row-cols-auto">
 
                 <c:forEach var="usuario" items="${usuarios}" varStatus="status">
+  
                     <div class="card m-3" style="width: 21rem;">
                         <!--<img src="..." class="card-img-top" alt="...">-->
+                       
+                       <img src="/imagen?email=${usuario.email},data:image/png;base64,${imageData}" alt="Image">
                         <h3>${usuario.nombre} ${usuario.apellido}</h3>
                         <div class="card-body">
                             <!--<h5 class="card-title">Card title</h5>

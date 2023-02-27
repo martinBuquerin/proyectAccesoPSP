@@ -88,7 +88,7 @@
             <form class="d-flex">
                 <!--<a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#modalRegistroAdmninistrador"><i class="far fa-user"></i>Identifícate</a>-->
 
-                <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModalLogueado" ><i class="far fa-user"></i>${correo.getEmail()}</a>
+                <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModalLogueado" ><i class="far fa-user"></i>${correo}</a>
 
             </form>
         </div>
@@ -141,7 +141,7 @@
                         <div class="row">
                             <div class="col d-flex justify-content-center ">
                                 <p class="f-1 m-2">Conectarse con <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span><span class="text-primary">g</span>l<span class="text-success">e</span></p>
-                                <img class="m-2"src="./imagenes/google-icon.svg" height="24px" width="24px"/>
+                                <img class="m-2"src="recursos/imagenes/google-icon.svg" height="24px" width="24px"/>
                             </div>
 
                         </div>
@@ -206,7 +206,7 @@
                         <div class="row">
                             <div class="col d-flex justify-content-center ">
                                 <p class="f-1 m-2">Conectarse con <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span><span class="text-primary">g</span>l<span class="text-success">e</span></p>
-                                <a href=""><img class="m-2"src="./imagenes/google-icon.svg" height="21px" width="20px"/></a>
+                                <a href=""><img class="m-2"src="recursos/imagenes/google-icon.svg" height="21px" width="20px"/></a>
                             </div>
                         </div>
                     </div>
@@ -270,7 +270,7 @@
                         <div class="row">
                             <div class="col d-flex justify-content-center ">
                                 <p class="f-1 m-2">Conectarse con <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span><span class="text-primary">g</span>l<span class="text-success">e</span></p>
-                                <a href=""><img class="m-2"src="./imagenes/google-icon.svg" height="21px" width="20px"/></a>
+                                <a href=""><img class="m-2"src="recursos/imagenes/google-icon.svg" height="21px" width="20px"/></a>
                             </div>
                         </div>
                     </div>

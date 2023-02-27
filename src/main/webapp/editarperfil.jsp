@@ -33,55 +33,57 @@
                 System.out.println("no tienes corre");
             }
 
-            if (usuarioCreado == null) {
+            if (usuarioCreado != null) {
         %> 
 
-        <div class="container-fluid w-50 mt-5" >
-            <p class="text-center fs-2 fw-bold pb-4">Editación de perfil</p>
+        <c:set var="usuario" value="${usuario}" />
+            <div class="container-fluid w-50 mt-5" >
+                <p class="text-center fs-2 fw-bold pb-4">Edición de perfil</p>
 
-            <form action="" method="post" class="form-registro" enctype="multipart/form-data" class="d-flex w-50 ">
-                <div class="row">
-                    <div class="col">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control w-50" id="nombreActualizado" name="nombreActualizado" placeholder="Nombre" value="${usuarioCreado.getNombre()}">
+                <form action="administrador?accion=enviarUpdate&id=${usuario.email}" method="post" class="form-registro" enctype="multipart/form-data" class="d-flex w-50 ">
+                    <div class="row">
+                        <div class="col">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control w-50" id="nombreEditado" name="nombreEditado"  value="<c:out value="${usuario.nombre}"/>">
 
-                        <label for="apellido">Apellido</label>
-                        <input type="text" class="form-control w-50" id="apellidoActualizado" name="apellidosActualizado" placeholder="Apellidos" value="${usuarioCreado.getApellido()}">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control w-50" id="apellidoEditado" name="apellidoEditado" placeholder="Apellidos" value="<c:out value="${usuario.apellido}"/>">
 
 
-                        <label for="email">Email</label>
-                        <input type="text" class="form-control w-50" id="correoActualizado" name="correoActualizado" placeholder="Email" value="${usuarioCreado.getEmail()}">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control w-50" id="correoEditado" name="correoEditado" placeholder="Email" value="<c:out value="${usuario.email}"/>">
 
-                        <label for="telefono">Telefono</label>
-                        <input type="text" class="form-control w-50" id="telefonoActualizado" name="telefonoActualizado" placeholder="Telefono" value="${usuarioCreado.getTelefono()}">
-                    </div>
+                            <label for="telefono">Telefono</label>
+                            <input type="text" class="form-control w-50" id="telefonoEditado" name="telefonoEditado" placeholder="Telefono" value="<c:out value="${usuario.telefono}"/>">
+                        </div>
                         <div class="col">
 
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" class="form-control w-50" id="contrasenaActualizado" name="contrasenaActualizado" placeholder="Contraseña" value="${usuarioCreado.getContrasena()}">
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" class="form-control w-50" id="contrasenaEditado" name="contrasenaEditado" placeholder="Contraseña" value="<c:out value="${usuario.contrasena}"/>">
 
 
-                        <label for="nombreEmpresa">Nombre de la empresa</label>
-                        <input type="text" class="form-control w-50" id="nombreEmpresaActualizado" name="nombreEmpresaActualizado" placeholder="Nombre Empresa" value="${usuarioCreado.getNombreEmpresa()}">
+                            <label for="nombreEmpresa">Nombre de la empresa</label>
+                            <input type="text" class="form-control w-50" id="nombreEmpresaEditado" name="nombreEmpresaEditado" placeholder="Nombre Empresa" value="<c:out value="${usuario.nombreEmpresa}"/>">
 
-                        <label for="descripcionEmpresa">Descripción de la empresa</label>
-                        <input type="text" class="form-control w-50" id="descripcionEmpresa" name="descripcionEmpresa" placeholder="Descripcion Empresa" value="${usuarioCreado.getDescripcionEmpresa()}">
+                            <label for="descripcionEmpresa">Descripción de la empresa</label>
+                            <input type="text" class="form-control w-50" id="descripcionEmpresaEditado" name="descripcionEditado" placeholder="Descripcion Empresa" value="<c:out value="${usuario.descripcionEmpresa}"/>">
 
 
-                        <label>Imagen</label>
-                        <input type="file" name="foto"><br>
+                            <label>Imagen</label>
+                            <input type="file" name="foto"><br>
+                        </div>
+
+
+
                     </div>
 
+                    <div class="col text-center p-2 mt-2 mb-4">
+                        <input type="hidden" id="id2" name="id2" value="${email}">
+                        <button type="submit" class="btn btn-success btn-lg" id="editar" name="editar">Editar</button>
+                    </div>
+                </form>
+            </div>
 
-
-                </div>
-
-                <div class="col text-center p-2 mt-2 mb-4">
-                    <input type="hidden" id="id2" name="id2" value="${email}">
-                    <button type="submit" class="btn btn-success btn-lg" id="editar" name="editar">Editar</button>
-                </div>
-            </form>
-        </div>
         <%
             }
         %> 

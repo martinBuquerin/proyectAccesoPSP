@@ -28,7 +28,7 @@ public class Ofrece implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic(optional = false)
     @Column(name = "idOfrece")
     private Integer idOfrece;
@@ -110,7 +110,5 @@ public class Ofrece implements Serializable {
         sb.append(" contrataList: ").append(contrataList);
         return sb.toString();
     }
-
-  
 
 }

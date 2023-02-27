@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.Local;
 
 @Local
-public interface iRolesService {
+public interface iRolesService  {
 
     List<Roles> seleccionaRol();
 

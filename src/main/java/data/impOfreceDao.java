@@ -1,10 +1,13 @@
 package data;
 
 import domain.Ofrece;
+import domain.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 @Stateless
 public class impOfreceDao implements iOfreceDao {
@@ -33,7 +36,32 @@ public class impOfreceDao implements iOfreceDao {
     }
 
     @Override
-    public Ofrece buscarOfrecePorId(Ofrece ofrece) {
-        return (Ofrece) this.em.find(Ofrece.class, ofrece.getIdOfrece());
+    public Ofrece buscarOfrecePorId(int ofrece) {
+            Ofrece ofreceSer = new Ofrece(ofrece);
+         System.out.println("idOfrece" + ofrece );
+          Query buscarOfrecePorId = em.createQuery(
+                "SELECT o FROM Ofrece o WHERE o.idOfrece = :idOfrece ");
+    
+      
+       Ofrece resultado = (Ofrece) buscarOfrecePorId.setParameter("idOfrece", ofrece).getSingleResult();
+        
+        System.out.println("resultado desde impofrecedao "+resultado);
+        return resultado;
+       
     }
+
+    @Override
+    public  List<Ofrece> buscarOfrecePorEmail(String usuario) {
+         Usuario user = new Usuario(usuario);
+         System.out.println("id bope" + usuario );
+          Query buscarPorEmail = em.createQuery(
+                "SELECT o FROM Ofrece o WHERE o.usuarioEmail = :usuarioEmail ");
+    
+      
+         List<Ofrece> resultado = buscarPorEmail.setParameter("usuarioEmail", user).getResultList();
+        
+        System.out.println("resultado desde impofrecedao "+resultado);
+        return resultado;
+    }
+
 }

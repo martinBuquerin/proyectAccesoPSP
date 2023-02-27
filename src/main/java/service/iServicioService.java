@@ -7,7 +7,9 @@ import javax.ejb.Local;
 @Local
 public interface iServicioService {
 
-    List<Servicio> seleccionaContrato();
+    List<Servicio> seleccionaServicio();
+
+    Servicio buscarServicioPorId(Servicio servicio);
 
     void insertarServicio(Servicio servicio);
 

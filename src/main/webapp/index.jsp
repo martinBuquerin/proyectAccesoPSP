@@ -30,13 +30,13 @@
                 <div id="carousel" class="carousel slide my-5 mx-2" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="3500">
-                            <img src="./imagenes/deco.jpg" class="d-block w-100" style="height: 20rem;" alt="decoraciones">
+                            <img src="recursos/imagenes/deco.jpg" class="d-block w-100" style="height: 20rem;" alt="decoraciones">
                         </div>
                         <div class="carousel-item" data-bs-interval="3500">
-                            <img src="./imagenes/jardin2.jpg" class="d-block w-100" style="height: 20rem;" alt="jardineria">
+                            <img src="recursos/imagenes/jardin.jpg" class="d-block w-100" style="height: 20rem;" alt="jardineria">
                         </div>
                         <div class="carousel-item" data-bs-interval="3500">
-                            <img src="./imagenes/pintor.jpg" class="d-block w-100" style="height: 20rem;" alt="pintor">
+                            <img src="recursos/imagenes/pintor.jpg" class="d-block w-100" style="height: 20rem;" alt="pintor">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -78,7 +78,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">
-                                    <img class="rounded mx-auto" width="140" height="180" src="./imagenes/i-busca.svg">
+                                    <img class="rounded mx-auto" width="140" height="180" src="recursos/imagenes/i-busca.svg">
                                 </div>
                                 <div class="col">
                                     <div>
@@ -92,7 +92,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">
-                                    <img class="rounded mx-auto" width="160" height="180" src="./imagenes/i-elige.svg">
+                                    <img class="rounded mx-auto" width="160" height="180" src="recursos/imagenes/i-elige.svg">
                                 </div>
                                 <div class="col">
                                     <div>
@@ -106,7 +106,7 @@
                         <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-start  my-5 mx-1" style="width:420px">
                             <div class="row border border-gray border-1 shadow bg-body rounded">
                                 <div class="col">
-                                    <img class="rounded mx-auto" width="160" height="180" src="./imagenes/i-contacta.svg">
+                                    <img class="rounded mx-auto" width="160" height="180" src="recursos/imagenes/i-contacta.svg">
                                 </div>
                                 <div class="col">
                                     <div>

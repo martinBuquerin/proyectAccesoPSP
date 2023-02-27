@@ -1,6 +1,7 @@
 package service;
 
 import domain.Contrata;
+import domain.Usuario;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -8,6 +9,8 @@ import javax.ejb.Local;
 public interface iContratoService {
 
     List<Contrata> seleccionaContrato();
+        
+    List<Contrata> buscarContratosPorId(Usuario usuario);
 
     void insertarContrato(Contrata contrato);
 

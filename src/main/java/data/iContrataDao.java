@@ -1,8 +1,8 @@
 package data;
 
 import domain.Contrata;
+import domain.Usuario;
 import java.util.List;
-import javax.ejb.Local;
 
 
 public interface iContrataDao {
@@ -10,6 +10,8 @@ public interface iContrataDao {
     List<Contrata> seleccionaContrato();
 
     Contrata buscarClientePorId(Contrata contrato);
+    
+    List<Contrata> buscarContratosPorId(Usuario usuario);
 
     void insertarContrato(Contrata contrato);
 

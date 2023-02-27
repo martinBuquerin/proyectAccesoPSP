@@ -1,5 +1,6 @@
 package data;
 
+import domain.Ofrece;
 import domain.Roles;
 import domain.Usuario;
 import java.util.List;
@@ -18,6 +19,7 @@ public class impUsuarioDao implements iUsuarioDao {
     @Override
     public List<Usuario> seleccionaUsuario() {
         List<Usuario> usuarios = this.em.createNamedQuery("Usuario.findAll").getResultList();
+
         return usuarios;
     }
 
@@ -32,15 +34,13 @@ public class impUsuarioDao implements iUsuarioDao {
     }
 
     @Override
-    public List<Usuario> buscarPorServicio(String servicio) {
+    public List<Ofrece> buscarPorServicio() {
 
-        TypedQuery<Usuario> consulta = em.createQuery(
-                "SELECT u FROM Usuario u WHERE u.nombreEmpresa LIKE :nombre ", Usuario.class);
-        
-      
-        List<Usuario> resultado = consulta.setParameter("nombre", "%"+servicio+"%").getResultList();
-        
-     
+        TypedQuery<Ofrece> consulta = em.createQuery(
+                "SELECT o FROM Ofrece o  ", Ofrece.class);
+
+        List<Ofrece> resultado = consulta.getResultList();
+
         return resultado;
     }
 
@@ -67,4 +67,18 @@ public class impUsuarioDao implements iUsuarioDao {
         List<Usuario> usuario = buscarPorRol.getResultList();
         return usuario;
     }
+    @Override
+    public Usuario buscarImagenes() {
+        TypedQuery<Usuario> consulta = em.createQuery(
+                "SELECT u.imagen FROM Usuario u WHERE u.email = :email ", Usuario.class);
+
+        Usuario resultado = consulta.setParameter("email", "han@gmail.com").getSingleResult();
+
+        byte[] imageBytes = resultado.getImagen();
+       
+        
+        
+        return resultado;
+    }
+
 }

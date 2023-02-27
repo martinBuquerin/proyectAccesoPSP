@@ -1,5 +1,6 @@
 package service;
 
+import domain.Ofrece;
 import domain.Roles;
 import domain.Usuario;
 import java.util.List;
@@ -24,5 +25,7 @@ public interface iUsuarioService {
 
     Usuario buscarUsuarioPorEmail(Usuario usuario);
 
-    List<Usuario> buscarPorServicio(String servicio);
+   public List<Ofrece> buscarPorServicio();
+
+    public Usuario buscarImagenes();
 }

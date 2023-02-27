@@ -1,12 +1,18 @@
 package service;
 
 import data.iUsuarioDao;
+import domain.Ofrece;
 import domain.Roles;
 import domain.Usuario;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+import java.util.Base64;
+import java.util.HashSet;
 import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -60,12 +66,8 @@ public class impUsuarioService implements iUsuarioService {
     }
 
     @Override
-    public List<Usuario> buscarPorServicio(String servicio) {
-      
-        
-        List<Usuario> usuario = this.usuarioDao.buscarPorServicio(servicio);
-    
-        return usuario;
+    public List<Ofrece> buscarPorServicio(){
+         return this.usuarioDao.buscarPorServicio();
     }
 
     @Override
@@ -82,5 +84,10 @@ public class impUsuarioService implements iUsuarioService {
             throw e;
         }
         return md5;
+    }
+
+    @Override
+    public Usuario buscarImagenes() {
+        return this.usuarioDao.buscarImagenes();
     }
 }
