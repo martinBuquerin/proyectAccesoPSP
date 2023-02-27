@@ -7,17 +7,12 @@ import java.io.ByteArrayOutputStream;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import java.sql.Connection;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Inject;
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
-import javax.transaction.UserTransaction;
 import service.iDireccionService;
 import service.iRolesService;
 import service.iUsuarioService;
@@ -35,7 +29,7 @@ import service.iUsuarioService;
 @MultipartConfig
 @WebServlet(name = "administrador", urlPatterns = {"/administrador"})
 public class administrador extends HttpServlet {
-private javax.sql.DataSource myDataSource;
+
     @Inject
     private iUsuarioService usuarioDao;
 
@@ -108,7 +102,7 @@ private javax.sql.DataSource myDataSource;
                     break;
                 case "enviarUpdate":
                     actualizarUsuario(request, response);
-                    response.sendRedirect("administrador.jsp");
+                    response.sendRedirect("index.jsp");
                     break;
             }
         }
@@ -138,7 +132,7 @@ private javax.sql.DataSource myDataSource;
         req = this.usuarioDao.buscarUsuarioPorEmail(req);
         System.out.println("devuelta en administrador servlet edit" + req);
         sesion.setAttribute("usuario", req);
-        response.sendRedirect("editarperfil.jsp");
+        response.sendRedirect("perfilEditar.jsp");
     }
 
     public void actualizarUsuario(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -152,8 +146,8 @@ private javax.sql.DataSource myDataSource;
         apellidoActualizado = request.getParameter("apellidoEditado");
         telefonoActualizado = request.getParameter("telefonoEditado");
         contrasenaActualizado = request.getParameter("contrasenaEditado");
-        nombreEmpresaActualizado = request.getParameter("nombreEmpresa");
-        descripcionEmpresaActualizado = request.getParameter("descripcionEmpresa");
+        nombreEmpresaActualizado = request.getParameter("nombreEmpresaEditado");
+        descripcionEmpresaActualizado = request.getParameter("descripcionEmpresaEditado");
 
         String name = request.getPart("foto").getSubmittedFileName();
 //obtener el archivo temporal
@@ -180,6 +174,8 @@ private javax.sql.DataSource myDataSource;
         usuarioActualizado.setNombre(nombreActualizado);
         usuarioActualizado.setApellido(apellidoActualizado);
         usuarioActualizado.setTelefono(telefonoActualizado);
+        usuarioActualizado.setNombreEmpresa(nombreEmpresaActualizado);
+        usuarioActualizado.setDescripcionEmpresa(descripcionEmpresaActualizado);
         usuarioActualizado.setImagen(bytes);
 
         try {

@@ -45,7 +45,7 @@
                     <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#equipo">Servicios</a>
+                    <a class="nav-link" href="usuario?accion=verServicios">Servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#o" data-toggle="modal" data-target="#modalRegistroProfesional">Soy profesional</a>
@@ -79,7 +79,7 @@
                     <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#equipo">Servicios</a>
+                    <a class="nav-link" href="usuario?accion=verServicios">Servicios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#modalRegistroProfesional">Soy profesional</a>
@@ -88,7 +88,7 @@
             <form class="d-flex">
                 <!--<a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#modalRegistroAdmninistrador"><i class="far fa-user"></i>Identifícate</a>-->
 
-                <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModalLogueado" ><i class="far fa-user"></i>${correo}</a>
+                <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#modalConectado" ><i class="far fa-user"></i><%=correo.getEmail()%></a>
 
             </form>
         </div>
@@ -159,8 +159,104 @@
 
 </div>
 <!-- /MODAL-->
+<!--modalConectado-->
+<% int rol = correo.getRolesidRol().getIdRol();
+    if (correo != null && rol != 9) {%>
+<div class="modal fade" id="modalConectado" tabindex="-1" role="dialog" style="margin-top:9em;  "aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content d-flex justify-content-center">
+
+            <div class="row">
+                <div class="col pt-4 text-center" style="padding-left:200px;">
+
+                    <h1 class="p-2 fs-4 text-center">Bienvenido</h1>
+                    <p> <%=correo.getEmail()%></p>
+                </div>
+                <div class="col" style="width:150px;">
+                    <button type="submit" class="btn btn-danger p-1 float-end px-3 m-2" data-dismiss="modal"  name="salir" >x</button>
+                </div>
+            </div>
+            <div class="modal-body p-2 ">
 
 
+
+                <div class="col text-center p-2 mt-2">
+                    <a href="usuario?accion=verContratos&id=<%=correo.getEmail()%>" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Ver Chats</a>
+
+
+                </div>
+                <div class="col text-center p-2 mt-2">
+
+                    <a href="usuario?accion=verPerfil&id=<%=correo.getEmail()%>" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Ver Perfil</a>
+
+                </div>
+
+                <div class="col text-center p-2 mt-2">
+
+                    <a href="cerrarsesion.jsp" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Cerrar sesión</a>
+
+                </div>
+
+
+            </div>
+            <!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
+        </div>
+    </div>
+
+</div>
+<%} else if (correo != null && rol == 9) {
+%>
+<div class="modal fade" id="modalConectado" tabindex="-1" role="dialog" style="margin-top:9em;  "aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content d-flex justify-content-center">
+
+            <div class="row">
+                <div class="col pt-4 text-center" style="padding-left:200px;">
+
+                    <h1 class="p-2 fs-4 text-center">Bienvenido</h1>
+                    <p> <%=correo.getEmail()%></p>
+                </div>
+                <div class="col" style="width:150px;">
+                    <button type="submit" class="btn btn-danger p-1 float-end px-3 m-2" data-dismiss="modal"  name="salir" >x</button>
+                </div>
+            </div>
+            <div class="modal-body p-2 ">
+
+
+
+                <div class="col text-center p-2 mt-2">
+                    <a href="usuario?accion=verContratos&id=<%=correo.getEmail()%>" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Ver solicitudes</a>
+
+
+                </div>
+                <div class="col text-center p-2 mt-2">
+
+                    <a href="usuario?accion=verPerfil&id=<%=correo.getEmail()%>" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Perfil</a>
+
+                </div>
+<div class="col text-center p-2 mt-2">
+                    <a href="usuario?accion=verContratos&id=<%=correo.getEmail()%>" style=" font-weight: 600;font-style: normal;" class="btn btn-success" >Ofrecer nuevo servicio</a>
+
+
+                </div>
+                <div class="col text-center p-2 mt-2">
+
+                    <a href="cerrarsesion.jsp" style=" font-weight: 600;font-style: normal;" class="btn btn-success btn-xs float-end" >Cerrar sesión</a>
+
+                </div>
+
+
+            </div>
+            <!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
+        </div>
+    </div>
+
+</div>
+<%}
+%>
+<!--/modalConectado-->
 <!-- FORMULARIO REGISTRO CLIENTE-->
 
 <div class="modal fade" id="modalRegistroCliente" tabindex="-1" role="dialog" style="margin-top:9em;  "aria-labelledby="myLargeModalLabel" aria-hidden="true">

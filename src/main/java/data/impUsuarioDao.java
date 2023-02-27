@@ -3,6 +3,7 @@ package data;
 import domain.Ofrece;
 import domain.Roles;
 import domain.Usuario;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -34,13 +35,14 @@ public class impUsuarioDao implements iUsuarioDao {
     }
 
     @Override
-    public List<Ofrece> buscarPorServicio() {
+    public List<Usuario> buscarPorServicio(String servicio) {
 
-        TypedQuery<Ofrece> consulta = em.createQuery(
-                "SELECT o FROM Ofrece o  ", Ofrece.class);
+        TypedQuery<Usuario> consulta = em.createQuery(
+                "SELECT u FROM Usuario u WHERE u.nombreEmpresa LIKE :nombre ", Usuario.class);
 
-        List<Ofrece> resultado = consulta.getResultList();
-
+        List<Usuario> resultado = new ArrayList<>();
+        resultado = consulta.setParameter("nombre", "%" + servicio + "%").getResultList();
+        System.out.println("resultadoDesdeConsulta.size"+resultado.size());
         return resultado;
     }
 
@@ -67,6 +69,7 @@ public class impUsuarioDao implements iUsuarioDao {
         List<Usuario> usuario = buscarPorRol.getResultList();
         return usuario;
     }
+
     @Override
     public Usuario buscarImagenes() {
         TypedQuery<Usuario> consulta = em.createQuery(
@@ -75,9 +78,7 @@ public class impUsuarioDao implements iUsuarioDao {
         Usuario resultado = consulta.setParameter("email", "han@gmail.com").getSingleResult();
 
         byte[] imageBytes = resultado.getImagen();
-       
-        
-        
+
         return resultado;
     }
 

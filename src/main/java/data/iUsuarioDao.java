@@ -11,7 +11,7 @@ public interface iUsuarioDao {
 
     List<Usuario> buscarUsuarioPorRol(Roles rol);
 
-    public List<Ofrece> buscarPorServicio();
+   public List<Usuario> buscarPorServicio(String servicio);
 
     Usuario buscarUsuarioPorEmail(Usuario usuario);
 

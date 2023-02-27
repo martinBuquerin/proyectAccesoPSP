@@ -33,7 +33,7 @@
                 System.out.println("no tienes corre");
             }
 
-            if (usuarioCreado != null) {
+            if (usuarioCreado != null && usuarioCreado.getRolesidRol().getNombre().equals("Profesional")) {
         %> 
 
         <c:set var="usuario" value="${usuario}" />
@@ -85,7 +85,56 @@
             </div>
 
         <%
-            }
+            }else if (usuarioCreado != null && usuarioCreado.getRolesidRol().getNombre().equals("Cliente")){
+
+
+        %> 
+              <c:set var="usuario" value="${usuario}" />
+            <div class="container-fluid w-50 mt-5" >
+                <p class="text-center fs-2 fw-bold pb-4">Edición de perfil</p>
+
+                <form action="administrador?accion=enviarUpdate&id=${usuario.email}" method="post" class="form-registro" enctype="multipart/form-data" class="d-flex w-50 ">
+                    <div class="row">
+                        <div class="col">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control w-50" id="nombreEditado" name="nombreEditado"  value="<c:out value="${usuario.nombre}"/>">
+
+                            <label for="apellido">Apellido</label>
+                            <input type="text" class="form-control w-50" id="apellidoEditado" name="apellidoEditado" placeholder="Apellidos" value="<c:out value="${usuario.apellido}"/>">
+
+
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control w-50" id="correoEditado" name="correoEditado" placeholder="Email" value="<c:out value="${usuario.email}"/>">
+
+                            <label for="telefono">Telefono</label>
+                            <input type="text" class="form-control w-50" id="telefonoEditado" name="telefonoEditado" placeholder="Telefono" value="<c:out value="${usuario.telefono}"/>">
+                        </div>
+                        <div class="col">
+
+                            <label for="contrasena">Contraseña</label>
+                            <input type="password" class="form-control w-50" id="contrasenaEditado" name="contrasenaEditado" placeholder="Contraseña" value="<c:out value="${usuario.contrasena}"/>">
+
+
+                            <label>Imagen</label>
+                            <input type="file" name="foto"><br>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="col text-center p-2 mt-2 mb-4">
+                        <input type="hidden" id="id2" name="id2" value="${email}">
+                        <button type="submit" class="btn btn-success btn-lg" id="editar" name="editar">Editar</button>
+                    </div>
+                </form>
+            </div>
+
+        
+             <%
+           
+
+}
         %> 
 
         <jsp:include page="footer.jsp" />

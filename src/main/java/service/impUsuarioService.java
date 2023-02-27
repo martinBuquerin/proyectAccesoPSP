@@ -8,6 +8,7 @@ import domain.Usuario;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 
 import java.util.Base64;
 import java.util.HashSet;
@@ -59,15 +60,15 @@ public class impUsuarioService implements iUsuarioService {
             int idRol = ((Usuario) usuario.get(i)).getRolesidRol().getIdRol().intValue();
             if (idRol != 9) {
                 System.out.println(((Usuario) usuario.get(i)).getRolesidRol().getIdRol());
-                usuarios.remove(i);
+                usuarios.remove(usuarios.get(i));
             }
         }
         return usuarios;
     }
 
     @Override
-    public List<Ofrece> buscarPorServicio(){
-         return this.usuarioDao.buscarPorServicio();
+    public List<Usuario> buscarPorServicio(String servicio){
+         return this.usuarioDao.buscarPorServicio(servicio);
     }
 
     @Override

@@ -25,7 +25,7 @@ public interface iUsuarioService {
 
     Usuario buscarUsuarioPorEmail(Usuario usuario);
 
-   public List<Ofrece> buscarPorServicio();
+    public List<Usuario> buscarPorServicio(String servicio);
 
     public Usuario buscarImagenes();
 }

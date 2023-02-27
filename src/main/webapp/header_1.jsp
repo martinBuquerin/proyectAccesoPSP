@@ -23,83 +23,10 @@
         System.out.println("no tienes corre");
     }
 
-    if (correo == null) {
+
 %> 
 
-<nav class="navbar navbar-expand-lg navbar-light p-3" id="menu">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <span class="fs-5 text-success fw-bold">miWeB.</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 ml-6 mb-lg-0 " style="width: 500px;">
-                <li class="nav-item ">
-                    <a class="nav-link" aria-current="page" href="index.jsp">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#equipo">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#seccion-contacto">Soy profesional</a>
-                </li>
-            </ul>
-            <form class="d-flex">
-                <!--<a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#modalRegistroAdmninistrador"><i class="far fa-user"></i>Identifícate</a>-->
-                <button type="button" id="logIn" class="btn btn-success btn-primary-outline-success" data-toggle="modal" data-target="#modalRegistroCliente"><i class="far fa-user" style="padding-right:4px;"></i>Identifícate</button>
-
-            </form>
-        </div>
-
-    </div>
-</nav>
-
-<% } else {
-
-%>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img style="width: 90px;height: 50px;" src="recursos/imagenes/fotoBarra.png"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-
-            <ul class="navbar-nav ms-auto mb-2  ">
-                <li class="nav-item "><a class="nav-link active" aria-current="page" href="#">            </a></li>
-
-
-                <li class="nav-item ">
-                    <a class="nav-link active" aria-current="page" href="#">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Provincias</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beneficios</a>
-                </li>
-            </ul>
-
-
-            <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModalLogueado"><i class="far fa-user"></i>
-
-                <%=correo%></a>
-
-
-
-            <!--  <a href="#" style=" font-weight: 600;font-style: normal;" class=" btn btn-success float-end" data-toggle="modal" data-target="#myModal"><i class="far fa-user"></i>Identificate</a>-->
-
-
-
-        </div>
-    </div> 
-</nav>
-
-<% }%>
 
 <button type="button" id="logIn" class="btn btn-success btn-primary-outline-success" data-toggle="modal" data-target="#modalRegistroCliente"><i class="far fa-user" style="padding-right:4px;"></i>Identifícate</button>
 
@@ -111,51 +38,28 @@
             <div class="row">
                 <div class="col pt-4" style="padding-left:200px;">
 
-                    <h1 class="p-2 fs-2 text-center">Registrarse</h1>
+                    <h1 class="p-2 fs-2 text-center">Bienvenido <%=correo%></h1>
                 </div>
                 <div class="col" style="width:150px;">
                     <button type="submit" class="btn btn-danger p-1 float-end px-3 m-2" data-dismiss="modal"  name="salir" >x</button>
                 </div>
             </div>
             <div class="modal-body p-2 ">
-                <form action="usuario?accion=validarCuenta&rol=Cliente" method="POST" ">
-                    <div class="form-group p-2">
-                        <div class="row">
-                            <div class="col " style="padding-left:7em; padding-top: 0.5em;">
-                                <p class="fs-5 font-weight-normal">Email</p>
-                            </div>
-                            <div class="col">
-                                <input type="email" class="form-control mt-1" required="required" name="email" style="width: 12em; height: 2em; margin-right:4em;">
-                            </div>
-                        </div>
-                    </div>
+                
 
-                    <div class="form-group p-2 pb-4 border-2 border-gray border-bottom ">
-                        <div class="row">
-                            <div class="col " style="padding-left:5em; padding-top: 0.5em;">
-                                <p class="fs-5 font-weight-normal">Contraseña</p>
-                            </div>
-                            <div class="col">
-                                <input type="password"  required="required" class="form-control mt-1" name="contrasena" style="width: 12em;  height: 2em; margin-right:4em;">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="form-group p-2">
-                        <div class="row">
-                            <div class="col d-flex justify-content-center ">
-                                <p class="f-1 m-2">Conectarse con <span class="text-primary">G</span><span class="text-danger">o</span><span class="text-warning">o</span><span class="text-primary">g</span>l<span class="text-success">e</span></p>
-                                <a href=""><img class="m-2"src="./imagenes/google-icon.svg" height="21px" width="20px"/></a>
-                            </div>
-                        </div>
-                    </div>
+           
                     <div class="col text-center p-2 mt-2">
 
-                        <button type="submit" class="btn btn-success mb-3" name="enviar" value="Enviar"  >Registrarse</button>
+                        <button type="submit" class="btn btn-success mb-3" name="enviar" value="Enviar"  >Editar Perfil</button>
 
                     </div>
-                </form>
+                  <div class="col text-center p-2 mt-2">
+
+                        <button type="submit" class="btn btn-success mb-3" name="enviar" value="Enviar"  >Ver Chats</button>
+
+                    </div>
+       
+       
             </div>
             <!--<a href="administrador.php" class="btn btn-success float-end" style="margin:1rem;">Volver</a>-->
         </div>

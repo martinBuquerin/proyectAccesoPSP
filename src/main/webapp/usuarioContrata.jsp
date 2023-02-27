@@ -7,7 +7,7 @@
 <%
     Usuario correo = (Usuario) session.getAttribute("email");
 
-   // session.setAttribute("correo", correo.getEmail());
+    // session.setAttribute("correo", correo.getEmail());
     if (correo != null) {
         System.out.println("correo desde el header " + correo);
     } else {
@@ -35,60 +35,60 @@
 
 
 
-    <div class="container-fluid  " style="width: 100%; padding-top:2rem; ">
-        <div class="row row-cols-auto d-flex justify-content-center" style="width:100%;  ">
-           
-                  
-            <div class="col" style="margin-left:6px;; width:20%;padding-top:2rem; ">
-                  <c:forEach var="resultado" items="${contratos}" varStatus="status">
-                <div class="col m-2">
-                    <div class="row border border-gray border-1 shadow bg-body">
-                        <div class="row">
-                            <div class="col  ">
-                                <img src="./recursos/imagenes/pintorTarjeta.png" >
-                            </div>
-                            <div class="col">
-                                <p >${resultado.ofreceidOfrece.usuarioEmail.email}</p>
-                                <p >${resultado.ofreceidOfrece.servicioidServicio.nombre}</p>
+        <div class="container-fluid  " style="width: 100%; padding-top:2rem; ">
+            <div class="row row-cols-auto d-flex justify-content-center" style="width:100%;  ">
+
+
+                <div class="col" style="margin-left:6px;; width:20%;padding-top:2rem; ">
+                    <c:forEach var="resultado" items="${contratos}" varStatus="status">
+                        <div class="col m-2">
+                            <div class="row border border-gray border-1 shadow bg-body">
+                                <div class="row">
+                                    <div class="col  ">
+                                        <img src="./recursos/imagenes/pintorTarjeta.png" >
+                                    </div>
+                                    <div class="col">
+                                        <p >${resultado.ofreceidOfrece.usuarioEmail.email}</p>
+                                        <p >${resultado.ofreceidOfrece.servicioidServicio.nombre}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </c:forEach>
                 </div>
-                               </c:forEach>
-            </div>
-                 
 
-            <div class="col" style="margin-left:6px; padding-bottom: 2rem; width: 50%; padding-top:2rem; ">
-                <div class="card " style="border-radius:3%;">
-                    <div class="card-header " style="border-radius:2rem; margin-top:1px;" >
-                        Chat
-                    </div>
-                    <div class="card-body" >
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                        <p>mensajes aca</p>
-                    </div>
-                    <div class="card-footer" style="border-radius:1rem; margin-top:1px;">
-                        <form class="overflow-auto">
-                            <div class="form-group " >
-                                <label for="mensaje">Mensaje</label>
-                                <input type="text" class="form-control" id="mensaje" />
-                            </div>
-                            <button type="submit" class="btn btn-success float-end">Enviar</button>
-                        </form>
+
+                <div class="col" style="margin-left:6px; padding-bottom: 2rem; width: 50%; padding-top:2rem; ">
+                    <div class="card " style="border-radius:3%;">
+                        <div class="card-header " style="border-radius:2rem; margin-top:1px;" >
+                            Chat
+                        </div>
+                        <div class="card-body" >
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                            <p>mensajes aca</p>
+                        </div>
+                        <div class="card-footer" style="border-radius:1rem; margin-top:1px;">
+                            <form class="overflow-auto">
+                                <div class="form-group " >
+                                    <label for="mensaje">Mensaje</label>
+                                    <input type="text" class="form-control" id="mensaje" />
+                                </div>
+                                <button type="submit" class="btn btn-success float-end">Enviar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
